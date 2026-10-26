@@ -7,9 +7,20 @@ export const api = {
     return fetch(url).then(res => res.json());
   },
   getStatuses: () => fetch(`${API_URL}/statuses`).then(res => res.json()),
+  createProject: (data: any) => fetch(`${API_URL}/projects`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(res => res.json()),
   createTask: (data: any) => fetch(`${API_URL}/tasks`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   }).then(res => res.json()),
+  updateTask: (id: number, data: any) => fetch(`${API_URL}/tasks/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(res => res.json()),
+  deleteTask: (id: number) => fetch(`${API_URL}/tasks/${id}`, { method: 'DELETE' }),
 };
