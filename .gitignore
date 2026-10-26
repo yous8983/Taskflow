@@ -1,0 +1,12 @@
+node_modules/
+.pnpm-store/
+*.log
+dist/
+build/
+.env
+.env.*
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
+.vscode/
